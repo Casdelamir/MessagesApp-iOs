@@ -15,12 +15,11 @@ class LogInViewController: UIViewController {
 
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var contentView: UIView!
+    //@IBOutlet weak var contentView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        contentView.layerGradient()
+        //contentView.layerGradient()
     }
     
     @IBAction func signIn(_ sender: Any) {
