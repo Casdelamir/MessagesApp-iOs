@@ -1,21 +1,19 @@
 //
-//  MainPageViewController.swift
+//  ProfileViewController.swift
 //  MessagesApp-iOS
 //
-//  Created by Mañanas on 16/9/24.
+//  Created by Mañanas on 19/9/24.
 //
 
 import UIKit
+import FirebaseStorage
 
-class MainPageViewController: UIViewController {
-
-    @IBOutlet weak var username: UILabel!
+class ProfileViewController: UIViewController {
     
+    let storage = Storage.storage()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        username.text = "usernmane123"
-
         // Do any additional setup after loading the view.
     }
     

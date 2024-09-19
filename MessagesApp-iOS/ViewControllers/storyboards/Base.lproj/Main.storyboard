@@ -168,12 +168,22 @@
                     <connections>
                         <outlet property="email" destination="vQp-w9-ig0" id="zns-5S-zN9"/>
                         <outlet property="password" destination="Zq5-tO-HCa" id="m1C-Ui-xGB"/>
-                        <segue destination="SyA-Ve-SP7" kind="show" identifier="goToHomePage" destinationCreationSelector="goToMainPage:" id="4EE-y8-hb8"/>
+                        <segue destination="ZKG-mj-qAk" kind="show" identifier="goToHomePage" id="1N1-z5-H6B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="973.28244274809151" y="3.5211267605633805"/>
+            <point key="canvasLocation" x="973" y="4"/>
+        </scene>
+        <!--MainAppPage-->
+        <scene sceneID="LaO-c1-UXa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainAppPage" id="ZKG-mj-qAk" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="kxh-Y9-PuV"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ntf-wa-nBe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="973" y="444"/>
         </scene>
         <!--Sing Up View Controller-->
         <scene sceneID="vwX-9H-lin">
@@ -261,41 +271,6 @@
             </objects>
             <point key="canvasLocation" x="1823.6641221374045" y="3.5211267605633805"/>
         </scene>
-        <!--Main Page View Controller-->
-        <scene sceneID="cfG-0n-wME">
-            <objects>
-                <viewController id="SyA-Ve-SP7" customClass="MainPageViewController" customModule="MessagesApp_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="EKN-eh-a5j">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hello" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWF-G0-KbQ">
-                                <rect key="frame" x="144" y="397" width="105" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                                <color key="textColor" red="0.89039260149002075" green="0.20062512159347534" blue="0.059259772300720215" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="highlightedColor" systemColor="systemRedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yq-DU-RT9">
-                                <rect key="frame" x="85" y="469" width="222" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="41"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="V60-UU-KXO"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="eSZ-os-oRq"/>
-                    <connections>
-                        <outlet property="username" destination="2yq-DU-RT9" id="lIn-bL-cay"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Cpm-3z-BZZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="971.7557251908396" y="721.83098591549299"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="rwv-Xa-28N">
             <objects>
@@ -331,9 +306,6 @@
         </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
