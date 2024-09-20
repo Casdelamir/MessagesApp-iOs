@@ -11,6 +11,8 @@ struct User: Codable {
     
     var id: String
     var username: String
+    var email: String
+    var gender: String
     var aboutMe: String
     var profileImage: String
     var birthday: String
