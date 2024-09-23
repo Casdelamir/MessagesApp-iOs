@@ -23,6 +23,7 @@
 		6CD3F3432C9C0E1A001F36C7 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD3F3422C9C0E1A001F36C7 /* RootViewController.swift */; };
 		6CD3F3462C9C1780001F36C7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD3F3452C9C1780001F36C7 /* ProfileViewController.swift */; };
 		6CD3F34A2C9C3CD2001F36C7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD3F3492C9C3CD2001F36C7 /* User.swift */; };
+		6CDEE79A2CA1531E00C595FD /* UIImageViewExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CDEE7992CA1531E00C595FD /* UIImageViewExtention.swift */; };
 		6CE2939B2C998B6A0018DD46 /* SingUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE2939A2C998B6A0018DD46 /* SingUpViewController.swift */; };
 		6CE2939D2C99928A0018DD46 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6CE2939C2C99928A0018DD46 /* GoogleService-Info.plist */; };
 		6CE293A02C9995BA0018DD46 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 6CE2939F2C9995BA0018DD46 /* GoogleSignIn */; };
@@ -44,6 +45,7 @@
 		6CD3F3422C9C0E1A001F36C7 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		6CD3F3452C9C1780001F36C7 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		6CD3F3492C9C3CD2001F36C7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		6CDEE7992CA1531E00C595FD /* UIImageViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtention.swift; sourceTree = "<group>"; };
 		6CE2939A2C998B6A0018DD46 /* SingUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpViewController.swift; sourceTree = "<group>"; };
 		6CE2939C2C99928A0018DD46 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6CE293A42C99A6A40018DD46 /* UIViewExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtention.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			children = (
 				6CE293A42C99A6A40018DD46 /* UIViewExtention.swift */,
 				6CAFFB052C9AB5400025A9B1 /* ThreeColorGradientView.swift */,
+				6CDEE7992CA1531E00C595FD /* UIImageViewExtention.swift */,
 			);
 			path = extentions;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				6CE293A52C99A6A40018DD46 /* UIViewExtention.swift in Sources */,
 				6C7558DB2C9812CA00B82F38 /* AppDelegate.swift in Sources */,
 				6CD3F34A2C9C3CD2001F36C7 /* User.swift in Sources */,
+				6CDEE79A2CA1531E00C595FD /* UIImageViewExtention.swift in Sources */,
 				6CD3F3432C9C0E1A001F36C7 /* RootViewController.swift in Sources */,
 				6CD3F3462C9C1780001F36C7 /* ProfileViewController.swift in Sources */,
 				6C7558DD2C9812CA00B82F38 /* SceneDelegate.swift in Sources */,

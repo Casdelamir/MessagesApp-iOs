@@ -16,6 +16,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
     let storage = Storage.storage()
     let userID = Auth.auth().currentUser!.uid
     var user: User! = nil
+    
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var usernameEditText: UITextField!
     @IBOutlet weak var gender: UISegmentedControl!
@@ -30,12 +31,13 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
         // Do any additional setup after loading the view.
         //birthdayDay.text?.ranges(of: "^(?:[1-9]|[1-2][0-9]|3[0-2])$")
         
+        fetchUser()
         
     }
     
     @IBAction func saveUser(_ sender: Any) {
         
-        var birthday: String = [birthdayDay.text!, birthdayMonth.text!, birthdayYear.text!]
+        let birthday: String = [birthdayDay.text!, birthdayMonth.text!, birthdayYear.text!]
             .compactMap { $0 }
             .joined(separator: " ")
         
@@ -46,9 +48,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
         birthdayYear.placeholder = birthdayYear.text!
         birthdayYear.text = ""
         
-        var gender: String = gender.titleForSegment(at: gender.selectedSegmentIndex)!
+        let gender: String = gender.titleForSegment(at: gender.selectedSegmentIndex)!
         
-        user = User(id: userID,username: usernameEditText.text!, email: Auth.auth().currentUser!.email!,gender: gender, aboutMe: aboutMe.text, profileImage: "", birthday: birthday)
+        user = User(id: userID, username: usernameEditText.text!, email: Auth.auth().currentUser!.email!,gender: gender, aboutMe: aboutMe.text, profileImage: user.profileImage, birthday: birthday)
         
         usernameEditText.placeholder = usernameEditText.text!
         usernameLabel.text = usernameEditText.text!
@@ -72,26 +74,35 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
                     print("User: \(user.debugDescription)")
                     
                     if user?.profileImage != nil && !user!.profileImage.isEmpty {
-                        imageProfile.image = loadFrom(url: user!.profileImage)
+                        imageProfile.loadFrom(url: user!.profileImage)
                     } else {
-                        profileImageView.image = UIImage(systemName: "person.circle.fill")
+                        imageProfile.image = UIImage(systemName: "person.circle.fill")
                     }
                     
-                    firstNameTextField.text = user?.firstName
-                    lastNameTextField.text = user?.lastName
-                    usernameTextField.text = user?.username
-                    birthdayDatePicker.date = user?.birthday ?? Date()
-                    genderSegmentedControl.selectedSegmentIndex = switch user?.gender {
-                    case .male:
+                    usernameLabel.text = user?.username
+                    usernameEditText.placeholder = user?.username
+                    let birthday = user?.birthday.split(separator: " ")
+                    
+                    if let birthday = birthday, !birthday.isEmpty {
+                        let stringBirthday = birthday.map { String($0) }
+                        
+                        birthdayDay.placeholder = stringBirthday[0]
+                        birthdayMonth.placeholder = stringBirthday[1]
+                        birthdayYear.placeholder = stringBirthday[2]
+                    }
+                    
+                    aboutMe.text = user.aboutMe
+                    
+                    gender.selectedSegmentIndex = switch user?.gender {
+                    case "Male":
                         0
-                    case .female:
+                    case "Female":
                         1
-                    case .other:
+                    case "Other":
                         2
                     default:
                         -1
                     }
-                    genderSegmentedControl(genderSegmentedControl)
                 } catch {
                     print("Error decoding user: \(error)")
                 }
@@ -122,13 +133,13 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate &
             let profileRef = storageRef.child("\(userID)/profile.jpg")
             
             // Upload the file to the path "{userID}/profile.jpg"
-            let uploadTask = profileRef.putData(data!, metadata: nil) { (metadata, error) in
+        _ = profileRef.putData(data!, metadata: nil) { (metadata, error) in
                 guard let metadata = metadata else {
                     // Uh-oh, an error occurred!
                     return
                 }
                 // Metadata contains file metadata such as size, content-type.
-                let size = metadata.size
+            _ = metadata.size
                 // You can also access to download URL after upload.
                 profileRef.downloadURL { (url, error) in
                     guard let downloadURL = url else {

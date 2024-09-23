@@ -7,11 +7,16 @@
 
 import UIKit
 import FirebaseAuth
+import Firebase
 
 class SingUpViewController: UIViewController {
     
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
+    
+    var user: User! = nil
+    let db = Firestore.firestore()
+    let userID = Auth.auth().currentUser!.uid
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +36,15 @@ class SingUpViewController: UIViewController {
                         } else {
                             print("Registro correcto")
                         }
+            
+            do {
+                try self.db.collection("Users").document(self.userID).setData(from: self.user)
+                //self.showToast(message: "Perfil actualizado correctamente")
+                print("Perfil guardado a DB correctamente")
+            } catch let error {
+                print("Error writing user to Firestore: \(error)")
+            }
+            
         }
     }
 
